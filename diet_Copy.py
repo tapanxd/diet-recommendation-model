@@ -28,8 +28,8 @@ DinnerdataNumpy=Dinnerdata.to_numpy()
 Food_itemsdata=data['Food_items']
 
 a = ""
-v = ""
 w = ""
+v = ""
 h = ""
 
 def show_entry_fields():
@@ -239,31 +239,7 @@ def Weight_Loss(clbmi, agecl):
                     if findata==datanv[it]:
                         print('VegNovVeg')
 
-    for i in diet_list_weightloss:
-        print(i)
-'''
-    print('SUGGESTED FOOD ITEMS ::')
-    for ii in range(len(y_pred_gnb)):
-        if y_pred[ii] == 2:  # weightloss
-            print(Food_itemsdata[ii])
-            findata = Food_itemsdata[ii]
-            if int(veg) == 1:
-                datanv = ['Chicken Burger']
-                for it in range(len(datanv)):
-                    if findata == datanv[it]:
-                        print('VegNovVeg')
-
-    print('SUGGESTED FOOD ITEMS ::')
-    for ii in range(len(y_pred_dt)):
-        if y_pred[ii] == 2:  # weightloss
-            print(Food_itemsdata[ii])
-            findata = Food_itemsdata[ii]
-            if int(veg) == 1:
-                datanv = ['Chicken Burger']
-                for it in range(len(datanv)):
-                    if findata == datanv[it]:
-                        print('VegNovVeg')
-'''
+    return diet_list_weightloss
 
 def Weight_Gain(clbmi, agecl):
     show_entry_fields()
@@ -615,7 +591,9 @@ def Healthy(clbmi, agecl):
     
     #Train the model using the training sets y_pred=clf.predict(X_test)
     clf.fit(X_train,y_train)
-
+    '''
+    
+    '''
     X_test2=X_test
     y_pred=clf.predict(X_test)
 
@@ -638,12 +616,24 @@ def Healthy(clbmi, agecl):
         print(i)
 
 
-if __name__ == '__main__':
+def main_func(ag, wh, vnv, he):
 
+    global a
+    global v
+    global w
+    global h
+
+    a = ag
+    w = wh
+    v = vnv
+    h = he
+
+    '''
     a = input("Age : ")
     v = input("veg / Non veg (0 / 1) : ")
     w = input("Weight (in kg) : ")
     h = input("Height (in cm) : ")
+    '''
 
     age = int(a)
     veg = float(v)
@@ -674,8 +664,12 @@ if __name__ == '__main__':
     elif ( bmi >= 25 and bmi < 30):
         print("Acoording to your BMI, you are Overweight")
         clbmi=1
-        Weight_Loss(clbmi, agecl)
+        weight_loss_food = Weight_Loss(clbmi, agecl)
+        return weight_loss_food
     elif ( bmi >=30):
         print("Acoording to your BMI, you are Severely Overweight")
         clbmi=0
-        Weight_Loss(clbmi, agecl)
+        weight_loss_food = Weight_Loss(clbmi, agecl)
+        return weight_loss_food
+
+# main_func()
