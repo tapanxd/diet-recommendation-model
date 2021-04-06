@@ -226,17 +226,21 @@ def Weight_Loss(clbmi, agecl):
     print()
     print(y_pred_dt)
     '''
+    diet_list_weightloss = []
 
     print ('SUGGESTED FOOD ITEMS ::')
     for ii in range(len(y_pred)):
         if y_pred[ii]==2:     #weightloss
-            print (Food_itemsdata[ii])
+            diet_list_weightloss.append(Food_itemsdata[ii])
             findata=Food_itemsdata[ii]
             if int(veg)==1:
                 datanv=['Chicken Burger']
                 for it in range(len(datanv)):
                     if findata==datanv[it]:
                         print('VegNovVeg')
+
+    for i in diet_list_weightloss:
+        print(i)
 '''
     print('SUGGESTED FOOD ITEMS ::')
     for ii in range(len(y_pred_gnb)):
@@ -431,13 +435,13 @@ def Weight_Gain(clbmi, agecl):
    
     X_test2=X_test
     y_pred=clf.predict(X_test)
-    
-    
+
+    diet_list_weightgain = []
     
     print ('SUGGESTED FOOD ITEMS ::')
     for ii in range(len(y_pred)):
         if y_pred[ii]==0:
-            print (Food_itemsdata[ii])
+            diet_list_weightgain.append(Food_itemsdata[ii])
             findata=Food_itemsdata[ii]
             if int(veg)==1:
                 datanv=['Chicken Burger']
@@ -445,6 +449,8 @@ def Weight_Gain(clbmi, agecl):
                     if findata==datanv[it]:
                         print('VegNovVeg')
 
+    for i in diet_list_weightgain:
+        print(i)
 
 
 
@@ -613,18 +619,23 @@ def Healthy(clbmi, agecl):
     X_test2=X_test
     y_pred=clf.predict(X_test)
 
+    diet_list_healthy = []
+
     print ('SUGGESTED FOOD ITEMS ::')
     for ii in range(len(y_pred)):
         if y_pred[ii] == 2:
             if ii >= 89:
                 continue
-            print(Food_itemsdata[ii])
+            diet_list_healthy.append(Food_itemsdata[ii])
             findata = Food_itemsdata[ii]
             if int(veg) == 1:
                 datanv = ['Chicken Burger']
                 for it in range(len(datanv)):
                     if findata == datanv[it]:
                         print('VegNovVeg')
+
+    for i in diet_list_healthy:
+        print(i)
 
 
 if __name__ == '__main__':
