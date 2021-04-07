@@ -425,8 +425,7 @@ def Weight_Gain(clbmi, agecl):
                     if findata==datanv[it]:
                         print('VegNovVeg')
 
-    for i in diet_list_weightgain:
-        print(i)
+    return diet_list_weightgain
 
 
 
@@ -612,8 +611,7 @@ def Healthy(clbmi, agecl):
                     if findata == datanv[it]:
                         print('VegNovVeg')
 
-    for i in diet_list_healthy:
-        print(i)
+    return diet_list_healthy
 
 
 def main_func(ag, wh, vnv, he):
@@ -652,15 +650,18 @@ def main_func(ag, wh, vnv, he):
     if ( bmi < 16):
         print("Acoording to your BMI, you are Severely Underweight")
         clbmi=4
-        Weight_Gain(clbmi, agecl)
+        weight_gain_food = Weight_Gain(clbmi, agecl)
+        return weight_gain_food
     elif ( bmi >= 16 and bmi < 18.5):
         print("Acoording to your BMI, you are Underweight")
         clbmi=3
-        Weight_Gain(clbmi, agecl)
+        weight_gain_food = Weight_Gain(clbmi, agecl)
+        return weight_gain_food
     elif ( bmi >= 18.5 and bmi < 25):
         print("Acoording to your BMI, you are Healthy")
         clbmi=2
-        Healthy(clbmi, agecl)
+        weight_healthy_food = Healthy(clbmi, agecl)
+        return weight_healthy_food
     elif ( bmi >= 25 and bmi < 30):
         print("Acoording to your BMI, you are Overweight")
         clbmi=1
