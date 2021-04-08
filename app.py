@@ -16,4 +16,5 @@ def func2(a, w, h, p):
     diet = main_func(a, w, pref, h)
     dietstr = "<br>".join(diet)
     return dietstr
-app.run(port=4000, debug=True)
+
+app.run()
