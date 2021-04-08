@@ -8,7 +8,6 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 from PIL import ImageFilter,Image
-from tkinter import filedialog, messagebox
 from sklearn.cluster import KMeans
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
