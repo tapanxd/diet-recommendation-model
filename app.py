@@ -33,11 +33,11 @@ def func2(a, w, h, p):
                         dinner.append(row[0]+ " " + row[5] + " " + "cal")
                     
     # print(break_fast,lunch,dinner)
-    brstr = "<br>".join(break_fast)
-    lustr = "<br>".join(lunch)
-    distr = "<br>".join(dinner)
+    brstr = "\n".join(break_fast)
+    lustr = "\n".join(lunch)
+    distr = "\n".join(dinner)
     
-    return "<b>Breakfast: </b><br>" + brstr + "<br><b>Lunch: </b><br>" + lustr + "<br><b>Dinner: </b><br>" + distr
+    return "BREAKFAST: \n" + brstr + "\nLUNCH: \n" + lustr + "\nDINNER: \n" + distr
     
 
 if __name__ == "__main__":
