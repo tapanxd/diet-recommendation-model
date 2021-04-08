@@ -1,6 +1,6 @@
 from flask import Flask
 from diet_Copy import *
-import csv
+import csv23
 app = Flask(__name__)
 @app.route('/')
 def predict():
@@ -20,7 +20,7 @@ def func2(a, w, h, p):
     diet = main_func(a, w, pref, h)
     for food in diet:
         with open("food.csv") as f:
-            reader = csv.reader(f)
+            reader = csv23.reader(f)
             for row in reader:
                 if(row[0] == food):
                     if row[1] == "1":
