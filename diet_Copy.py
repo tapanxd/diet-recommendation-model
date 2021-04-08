@@ -7,7 +7,6 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-from tkinter import *
 from PIL import ImageFilter,Image
 from tkinter import filedialog, messagebox
 from sklearn.cluster import KMeans
