@@ -13,9 +13,31 @@ def func2(a, w, h, p):
     elif p == "Non-Veg":
         pref = 1
 
+    break_fast = []
+    lunch = []
+    dinner = []
     diet = main_func(a, w, pref, h)
-    dietstr = "<br>".join(diet)
-    return dietstr
+    for food in diet:
+        with open("food.csv") as f:
+            reader = csv.reader(f)
+            for row in reader:
+                if(row[0] == food):
+                    if row[1] == "1":
+                        break_fast.append(row[0] + " " + row[5] + " " + "cal")
+                        
+                    if row[2] == "1":
+                        lunch.append(row[0]+ " " + row[5] + " " + "cal")
+                        
+                    if row[3] == "1":
+                        dinner.append(row[0]+ " " + row[5] + " " + "cal")
+                    
+    # print(break_fast,lunch,dinner)
+    brstr = "<br>".join(break_fast)
+    lustr = "<br>".join(lunch)
+    distr = "<br>".join(dinner)
+    
+    return "<b>Breakfast: </b><br>" + brstr + "<br><b>Lunch: </b><br>" + lustr + "<br><b>Dinner: </b><br>" + distr
+    
 
 if __name__ == "__main__":
     app.run(debug = True)
