@@ -1,5 +1,5 @@
 from flask import Flask
-from diet_Copy import *
+# from diet_Copy import *
 app = Flask(__name__)
 @app.route('/')
 def predict():
