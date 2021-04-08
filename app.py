@@ -17,5 +17,5 @@ def predict():
 #     dietstr = "<br>".join(diet)
 #     return dietstr
 
-if name == "main":
+if __name__ == "__main__":
     app.run(debug = True)
