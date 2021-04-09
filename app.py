@@ -33,9 +33,9 @@ def func2(a, w, h, p):
                         dinner.append(row[0]+ " " + row[5] + " " + "cal")
                     
     # print(break_fast,lunch,dinner)
-    brstr = "\n".join(break_fast)
-    lustr = "\n".join(lunch)
-    distr = "\n".join(dinner)
+    brstr = ", ".join(break_fast)
+    lustr = ", ".join(lunch)
+    distr = ", ".join(dinner)
     
     return "BREAKFAST: \n" + brstr + "\nLUNCH: \n" + lustr + "\nDINNER: \n" + distr
     
