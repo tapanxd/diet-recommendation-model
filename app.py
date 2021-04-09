@@ -37,7 +37,7 @@ def func2(a, w, h, p):
     lustr = ", ".join(lunch)
     distr = ", ".join(dinner)
     
-    return "BREAKFAST: \n" + brstr + "\nLUNCH: \n" + lustr + "\nDINNER: \n" + distr
+    return "BREAKFAST: \n" + brstr + "\n\nLUNCH: \n" + lustr + "\n\nDINNER: \n" + distr
     
 
 if __name__ == "__main__":
